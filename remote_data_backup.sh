@@ -8,9 +8,9 @@ PLATFORM="taiwan disney jidong dawushi viet  apple xinchang japan"
 INCLUDE="login game mongodb redis mysql"
 
 #----------- mysql argument ------------
-HOST=10.10.41.2
-USER=root
-PASSWORD=test
+HOST=127.0.0.1
+USER=xxx
+PASSWORD=xxxx
 DATABASE=jd_oss
 TABLE=dbbackup
 MYSQL_CONN="mysql -h$HOST -u$USER -p$PASSWORD  $DATABASE -e"
