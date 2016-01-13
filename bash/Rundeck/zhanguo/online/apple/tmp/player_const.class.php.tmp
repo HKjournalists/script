@@ -1,0 +1,73 @@
+<?php
+
+class Player_Const{
+
+    const BLACKSMITH_FORGE_CUMULATIVE_TIME_CLEAR_PAY_GOLD =  10; //锻造物品累计时间清除花费金币数
+    const PLAYER_ACTION_INTERVAL_TIME = 180;                     //玩家行动力更新间隔时间
+
+    const PLAYER_TODAY_RIVALS_NUMBER = 10;                       //竞技场当天攻击列表数量
+    const PLAYER_TODAY_RIVALS_TEMP_MAX = 100;
+    const PLAYER_TODAY_RIVALS_TEMP_MIN = 100;
+
+    const PLAYER_USER_NAME_MAX_LEN = 32;
+    const SYSTEM_RANK_PAYOFF_INTERVAL_TIME = 604800;             //forbidden modify, a week
+
+    const ARENA_FRIEND_BATTLE_ADD_KIZUNA_NUMBER = 10;            //竞技场-好友战斗-增加 kizuna 10 点
+    const ARENA_BATTLE_SUCCESS_ADD_SCORE = 3;                    //竞技场战斗胜利增加 3 分
+    const ARENA_BATTLE_ENEMY_REFRESH_NUMBER = 100;               //竞技场每次刷新最新限定敌人追加数量
+    const ARENA_BATTLE_TEMP_NEW_ENEMY_LIST_EXPIRE = 1800;        //竞技场当天临时对战敌人列表有效时间，过时自动销毁, 1800(s)
+    const ARENA_BATTLE_REFRESH_ENEMY_PAY_GOLD = 10;              //竞技场刷新最新敌人花费 10 gold
+    const ARENA_BATTLE_CRON_REFRESH_WEEK_RANK_MAX_NUMBER = 100;  //竞技场 Cron.week_rank_preload 每周三晚上 11:30 预初始化明天礼拜四 战斗对象(最新进入玩家)队列，数量 100
+    const ARENA_WEEK_RANK_LIST_LIMIT = 100;                      //竞技场合战排行列表显示数量限制
+    const ARENA_WEEK_TEMP_RANK_LIST_EXPIRE = 600;                //竞技场合战排行列表有效时间，过时自动销毁, 600(s)
+    const ARENA_WEEK_RANK_LIST_BONUS_TOP_NUMBER = 100;           //竞技场合战每周排行奖励前100名，数量设定
+
+    const SAMURAI_BASIC_DATA_BATK_PERCENT = 0.1;                //武将武力 pow 影响 batk 加成
+    const SAMURAI_BASIC_DATA_BDEF_PERCENT = 0.2;                //武将领导力 led 影响 bdef 加成
+
+    const BUILDING_GARRISON_SAMURI_DEFAULT = 0;                  //建筑可驻扎武将的默认数量上限
+    const BARRACK_GARRISON_SAMURI_MAX = 1;                       //兵营可驻扎武将的数量上限
+    const HOUSE_GARRISON_SAMURI_MAX = 1;                         //武将可驻扎武将的数量上限
+    const DOJO_GARRISON_SAMURI_MAX = 3;                          //道场可驻扎武将的数量上限
+    const BLACKSMITH_FORGE_PAY_GOLD = 50;                        //锻造物品花费 10 金币 100% 成功锻造
+    const BLACKSMITH_FORGE_TIME = 120;                           //每次锻造累加时间
+    const BLACKSMITH_FORGE_TIME_LIMIT = 3600;                    //最大锻造累加时间
+    const BLACKSMITH_FORGE_TIME_CLEAR_BASIC_NUMBER =  300;       //清除铁匠铺累加时间每 300s 花费 5 金币
+    const BLACKSMITH_FORGE_TIME_CLEAR_PAY_GOLD =  5;             //清除铁匠铺累加时间每 300s 花费 5 金币
+    const PLAYER_QUERY_LIMIT = 60;                               //玩家间隔查询秒数
+    const PLAYER_ONLINE_SECONDS_LIMIT = 600;                     //玩家在线时间间隔
+    const DEFAULT_FRIENDS_WEIGHT = 100;                          //好友默认权重
+    const FRIENDS_HELP_WEIGHT = 2;                               //帮助好友获得权重
+    const FRIENDS_HELPED_WEIGHT = 1;                             //被帮助获得的权重
+
+    const COPY_BATTLE_FRIEND_WEIGHT_NUMBER = 5000;               //副本战斗好友乱入干扰权重配置常量
+    const CHALLENGE_LIST_MAX_NUMBER = 500;                       //下克上排行榜最大数量
+    const CHALLENGE_CREDIT_MAX_NUMBER = 10;                      //下克上每天最大挑战次数
+    const CHALLENGE_BUY_COST_GOLD = 10;                          //下克上挑战花费 10 金币
+    const ARENA_CHALLENGE_WEEK_RANK_BONUS_HISTORY_EXPIRE = 30240;//竞技场Challenge Rank Bonus History排行列表有效时间，过时自动销毁, 30240(s)
+    
+    const ORDER_IS_DEFAULT    = 0;
+    const ORDER_IS_CALLBACK   = 1;
+    const ORDER_IS_FINISHED   = 2;
+    const ORDER_IS_FAILURED   = 3;
+    const ORDER_ID_MAX_LENGTH = 16;
+
+    const NOTCE_SERVER_RELEASE_DELAY_SECONDS = 600;
+
+    const TEMP_HQ_RANK_LIST_EXPIRE = 900;                        //hq排行列表有效时间，过时自动销毁, 900(s)
+    const TEMP_GOLD_RANK_LIST_EXPIRE = 900;                      //gold排行列表有效时间，过时自动销毁, 900(s)
+    const TEMP_POPULATION_RANK_LIST_EXPIRE = 900;                //population排行列表有效时间，过时自动销毁, 900(s)
+    
+    const TMPBACKPACK_MAX_NUM = 999;
+    
+    const KINGNET_APK_GOOGLEPLAY_PUBLIC_KEY = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoABeDeQonpQgR/Kh+MlcIeBTctFonwqcNKK+uS3jgF+6fZWZvfrumegfG1d7AsPZU6MZ0Isz7iIFi1/f9Mc9GWY8RRqFqZbJddldeWvY1He3OtZBsxPutkxj8KLoULqaJWGZy7BPZzPpolKH2NtGJibflxvXxPlW53k7GCPrb5Km7o+bCt+O1ql+S6PdURMkbzP/T2RxIXIU/qEaCLzGqYGrOdLf48YxdgQ+l/PkepqQ4boU52xrlANEDQ9X5Fm3RZr96DD7n4Nt4mCvm9gLnV9XivmnE+6Rr6GZK3Vqd7Oc9a/TZgrUlQH747MHcA3I8dIK/Y4lqduuUga1PmK98QIDAQAB';
+    const APPLE_SID = 'MIIBIjA+$%^NBgkqhkiG+$%^9w0BA!@#$%^QEFAPPLE_SIDAAO+$%^CAQ8AMIIBCgKC+$%^APPLE_SID+$%^9w0BA!@#$%^QEFABeD+$%^eQonAPPLE_SIDpQgR/Kh+M+$%^lcIeBTctFonwqc+$%^NKK+uS3jgF+6fZWZvAPPLE_SIDfrum+$%^egfG1d7AsPZU6MZ0Isz7iIFi1/f9Mc9GWY8RRqFqZb+$%^9w0BA!@#$%^QEFBsxPutkxj8KLoULqaJWGZy7BPZzPpolKH2NtGJibflxvXxPlW53k7GCPrb5Km7o+bCt+O1ql+S6PdURMkbzP/T2R+$%^9w0BA!@#$%^QEFGqYGrOdLf48YxdgQ+l/Pke+$%^pqQ4boU52xrl+$%^ANEDQ9X5Fm3RZr96DD7n4Nt+$%^4mXivmnE+6Rr6GZ+$%^9w0BA!@#$%^QEFqd7Oc9a/TZgrUlQH+$%^9w0BA!@#$%^QEFdIK/Y4lqmK98QIDAQAB+$%^';
+    const COUNTRY_BATTLE_NUM = 10;                              //国战分组的基数 以区服的数量为单位
+    const COUNTRY_BATTLE_GROUP_MAX_NUM = 128;                   //国战每组的最大人数
+    const COUNTRY_BATTLE_COST_NUM = 50;                         //国战每次报名需要话费多少
+    const COUNTRY_BATTLE_WEEK = 1;                              //国战 在一周的那天开启
+    const COUNTRY_BATTLE_START_TIME = '110000';                       //国战每次开启报名的时间 110000
+    const COUNTRY_BATTLE_END_TIME = 235959;                         //国战每次结束报名的时间
+    const COUNTRY_HP_LEVEL_MIN=40;	//报名本丸最小等级
+	const COUNTRY_ID_ERROR='100000'; // 大区不在列表中
+}
