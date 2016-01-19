@@ -6,7 +6,6 @@
  @DateTime:    2016-01-12 17:25:13
  @Description: 根据本地目录结构遍历下载CDN上的文件,和本地进行比对.
                主要通过上线流程自动触发下载进行检测,检验文件上传完毕后的下载文件,是否和本地一致.
-               .
  @version :    1.0.0
 '''
 
@@ -119,10 +118,7 @@ def parseAndProcess(localResourcePath,cdnUrl,savePath,keep_files=True):
 
     # 多进程任务开始
     print 'Parent process is %s .' % os.getpid()
-    for i in zip(savePathList,urls,resourceFiles):
-        download_path = i[0]
-        url = i[1]
-        local_path = i[2]
+    for download_path,url,local_path in zip(savePathList,urls,resourceFiles):
         threadList.append(threading.Thread(target=checkFiles,args=(download_path,url,local_path,),name=url))
         if not keep_files:
             os.remove(download_path)
@@ -180,7 +176,7 @@ def run():
     # 下载文件的保存位置
     savePath = 'd:\\test1'
 
-    parseAndProcess(localResourcePath,cdnUrl,savePath)
+    parseAndProcess(localResourcePath,cdnUrl,savePath,keep_files=False)
 
     # 保存结果
     with open(result_file, 'wb') as f:
